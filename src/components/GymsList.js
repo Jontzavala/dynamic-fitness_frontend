@@ -14,10 +14,10 @@ const GymsList = (props) => {
                         <Col key={gym.id}>
                             <Card>
                                 <Link to={`/gyms/${gym.attributes.id}`}>
-                                    <Card.Title>{gym.sttributes.name}</Card.Title>
+                                    <Card.Title>{gym.attributes.name}</Card.Title>
                                 </Link>
                                 <Card.Text>{gym.attributes.founder}</Card.Text>
-                                <Card.Text>{gym.attibutes.discription}</Card.Text>
+                                <Card.Text>{gym.attributes.description}</Card.Text>
                             </Card>
                         </Col>
                     )}
