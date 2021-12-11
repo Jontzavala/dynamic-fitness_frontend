@@ -16,4 +16,9 @@ $theme-colors: (
   danger: $danger
 );
 
+.sortDiv {
+  display: flex;
+  justify-content: center;
+}
+
 @import '~bootstrap/scss/bootstrap.scss'; 
