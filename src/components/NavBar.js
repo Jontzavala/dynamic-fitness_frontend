@@ -4,7 +4,7 @@ import {Navbar, Nav, Container} from 'react-bootstrap';
 const NavBar = () => {
     return (
         <>
-            <NavBar>
+            <Navbar>
                 <Container>
                     <Navbar.Brand href='/'>Dynamic Fitness</Navbar.Brand>
                     <Nav>
@@ -13,7 +13,7 @@ const NavBar = () => {
                         <Nav.Link href='/gyms/new'>Create a Gym</Nav.Link>
                     </Nav>
                 </Container>
-            </NavBar>
+            </Navbar>
         </>
     )
 }
