@@ -4,7 +4,7 @@ export function fetchGyms() {
         .then(response => response.json())
         .then(gyms => {
             if(gyms.error) {
-                alert(books.error)
+                alert(gyms.error)
             }else{
                 dispatch({type: 'FETCH_GYMS', payload: gyms.data})
             }
