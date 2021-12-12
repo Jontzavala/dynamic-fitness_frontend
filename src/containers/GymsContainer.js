@@ -3,8 +3,16 @@ import {connect} from 'react-redux'
 import {Route, Switch} from 'react-router-dom'
 import GymsList from '../components/GymsList'
 import {fetchGyms} from '../actions/fetchGyms'
+import GymCreateForm from '../components/GymCreateForm'
 
 class GymsContainer extends Component {
+    state = {
+        showModal: false
+    }
+    
+      toggleModal = () => {
+        this.setState({ showModal: !this.state.showModal})
+    }
 
     componentDidMount() {
         this.props.fetchGyms()
@@ -15,6 +23,7 @@ class GymsContainer extends Component {
             <div>
                 <Switch>
                     <Route path='/gyms' render={(routeProps) => <GymsList {...routeProps} gyms={this.props.gyms}/> } />
+                    <Route path='/gyms/new' render={(routeProps) => <GymCreateForm {...routeProps} toggle={this.toggleModal}/> } />
                 </Switch>
                 
             </div>
