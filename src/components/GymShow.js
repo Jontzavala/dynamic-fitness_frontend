@@ -11,6 +11,10 @@ const GymShow = (props) => {
     if (gym.length === 0) return null;
     let gymData = (gym && gym[0].attributes);
 
+    const handleDelete = (gymData) => {
+        props.deleteGym(gymData.id, props.history)
+    }
+
     return(
         <Container>
             <Row>
@@ -18,11 +22,11 @@ const GymShow = (props) => {
                     <h2>{gymData.name}</h2>
                     <h3>{gymData.founder}</h3>
                     <p>{gymData.description}</p>
-                    <Button onclick={() => handleDelete(gymData)}>Delete Gym</Button>
+                    <Button onClick={() => handleDelete(gymData)}>Delete Gym</Button>
                 </Col>
             </Row>
         </Container>
     )
 }
 
-export default connect()(GymShow)
+export default connect(null, {deleteGym})(GymShow)
