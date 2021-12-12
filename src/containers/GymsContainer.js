@@ -4,6 +4,7 @@ import {Route, Switch} from 'react-router-dom'
 import GymsList from '../components/GymsList'
 import {fetchGyms} from '../actions/fetchGyms'
 import GymCreateForm from '../components/GymCreateForm'
+import SuccessModal from '../components/SuccessModal'
 
 class GymsContainer extends Component {
     state = {
@@ -25,6 +26,7 @@ class GymsContainer extends Component {
                     <Route path='/gyms' render={(routeProps) => <GymsList {...routeProps} gyms={this.props.gyms}/> } />
                     <Route path='/gyms/new' render={(routeProps) => <GymCreateForm {...routeProps} toggle={this.toggleModal}/> } />
                 </Switch>
+                <SuccessModal isOpen={this.state.showModal} toggle={this.toggleModal} />
                 
             </div>
         )
