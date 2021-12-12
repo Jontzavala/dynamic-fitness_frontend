@@ -1,5 +1,5 @@
 import React from 'react';
-import {useParams} from 'react-router-dom'
+import {useParams, Link} from 'react-router-dom'
 import {Container, Row, Col, Button} from 'react-bootstrap';
 import {deleteGym} from '../actions/deleteGym'
 import WorkoutsContainer from '../containers/WorkoutsContainer'
@@ -23,6 +23,7 @@ const GymShow = (props) => {
                     <h2>{gymData.name}</h2>
                     <h3>{gymData.founder}</h3>
                     <p>{gymData.description}</p>
+                    <Link to={`/gyms/${gymData.id}/workouts/new`}>Create a New Workout</Link>
                     <Button onClick={() => handleDelete(gymData)}>Delete Gym</Button>
                 </Col>
             </Row>

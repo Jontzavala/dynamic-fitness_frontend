@@ -16,6 +16,16 @@ export default function gymsReducer(state = {gyms: []}, action) {
             })
             return {...state, gyms: gymWorkouts}
 
+        case 'DELETE_REVIEW':
+            let gyms = state.gyms.map(gym => {
+                if (gym.id === action.payload.data.id) {
+                    return action.payload.data
+                }else {
+                    return gym
+                }
+            })
+            return {...state, gyms: gyms}
+
         case 'DELETE_GYM':
             let postDeleteGyms = state.gyms.filter(gym => gym.id !== action.payload.toString())
             return {...state, gyms: postDeleteGyms}
