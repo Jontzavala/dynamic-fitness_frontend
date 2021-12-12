@@ -8,7 +8,7 @@ const GymShow = (props) => {
     const {id} = useParams();
     let gym = props.gyms.filter(gym => gym.id === id)
     if (gym.length === 0) return null;
-    let gymData = (book && book[0].attributes);
+    let gymData = (gym && gym[0].attributes);
 
     return(
         <Container>
