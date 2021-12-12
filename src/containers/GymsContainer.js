@@ -11,7 +11,7 @@ class GymsContainer extends Component {
         showModal: false
     }
     
-      toggleModal = () => {
+    toggleModal = () => {
         this.setState({ showModal: !this.state.showModal})
     }
 
@@ -23,8 +23,8 @@ class GymsContainer extends Component {
         return (
             <div>
                 <Switch>
-                    <Route path='/gyms' render={(routeProps) => <GymsList {...routeProps} gyms={this.props.gyms}/> } />
                     <Route path='/gyms/new' render={(routeProps) => <GymCreateForm {...routeProps} toggle={this.toggleModal}/> } />
+                    <Route path='/gyms' render={(routeProps) => <GymsList {...routeProps} gyms={this.props.gyms}/> } />
                 </Switch>
                 <SuccessModal isOpen={this.state.showModal} toggle={this.toggleModal} />
                 
