@@ -2,6 +2,7 @@ import React from 'react';
 import {useParams} from 'react-router-dom'
 import {Container, Row, Col, Button} from 'react-bootstrap';
 import {deleteGym} from '../actions/deleteGym'
+import WorkoutsContainer from '../containers/WorkoutsContainer'
 import {connect} from 'react-redux'
 
 const GymShow = (props) => {
@@ -25,6 +26,7 @@ const GymShow = (props) => {
                     <Button onClick={() => handleDelete(gymData)}>Delete Gym</Button>
                 </Col>
             </Row>
+            <WorkoutsContainer gym={gym} />
         </Container>
     )
 }
