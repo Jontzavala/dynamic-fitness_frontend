@@ -35,7 +35,7 @@ class WorkoutsCreateForm extends Component {
                     </Form.Group>
                     <Form.Group controlId="content">
                         <Form.Label>Content</Form.Label>
-                        <Form.Control type="text" name="content" value={this.state.content} onChange={this.handleOnChange} required/>
+                        <Form.Control as="textarea" name="content" value={this.state.content} onChange={this.handleOnChange} required/>
                     </Form.Group>
                     <div>
                         <Button type="submit">Submit</Button>
