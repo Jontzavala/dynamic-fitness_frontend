@@ -19,6 +19,7 @@ class GymCreateForm extends Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault();
+        debugger
         this.props.addGym(this.state, this.props.history);
         this.props.toggle();
     }
