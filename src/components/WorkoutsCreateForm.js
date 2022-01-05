@@ -15,6 +15,14 @@ class WorkoutsCreateForm extends Component {
           [event.target.name] : event.target.value
         })
     }
+
+    // handleLegDay = () => {
+    //     const legDay = {
+    //         title: 'Leg day',
+    //         content: 'Squats'
+    //     }
+    //     this.props.addWorkout(legDay, this.props.gym[0].id, this.props.history)
+    // }
       
       
     handleOnSubmit = (event) => {
@@ -26,19 +34,20 @@ class WorkoutsCreateForm extends Component {
 
     render() {
         return (
-            <Container>
-                <h2>Create a Workout</h2>
-                <Form onSubmit={this.handleOnSubmit}>
-                    <Form.Group controlId="title">
+            <Container className='w-50 p-5'>
+                <h2 className='header text-center'>Create a Workout</h2>
+                <Form onSubmit={this.handleOnSubmit} className='mx-auto'>
+                    <Form.Group className='mb-3' controlId="title">
                         <Form.Label>Workout Title:</Form.Label>
                         <Form.Control type="text" name="title" value={this.state.title} onChange={this.handleOnChange} required/>
                     </Form.Group>
-                    <Form.Group controlId="content">
+                    <Form.Group className='mb-3' controlId="content">
                         <Form.Label>Content</Form.Label>
-                        <Form.Control as="textarea" name="content" value={this.state.content} onChange={this.handleOnChange} required/>
+                        <Form.Control as="textarea" name="content" value={this.state.content} onChange={this.handleOnChange} style={{height: '100px'}} required/>
                     </Form.Group>
-                    <div>
-                        <Button type="submit">Submit</Button>
+                    {/* <Button onClick={this.handleLegDay}>Add Leg day</Button> */}
+                    <div className='d-grid gap-2 col-6 mx-auto'>
+                        <Button variant='secondary' type="submit" className='m-auto shadow'>Submit</Button>
                     </div>
                 </Form>
             </Container>

@@ -4,7 +4,7 @@ import {Navbar, Nav, Container} from 'react-bootstrap';
 const NavBar = () => {
     return (
         <>
-            <Navbar>
+            <Navbar variant="primary">
                 <Container>
                     <Navbar.Brand href='/'>Dynamic Fitness</Navbar.Brand>
                     <Navbar.Toggle aria-controls='responsive-navbar-nav' />

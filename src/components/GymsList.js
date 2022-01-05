@@ -9,10 +9,10 @@ const GymsList = (props) => {
     return (
         <div>
             <Container fluid>
-                <Row>
+                <Row xs={1} md={2} lg={4} xl={6} className='g-8'>
                     {gyms.map(gym => 
-                        <Col key={gym.id}>
-                            <Card>
+                        <Col key={gym.id} className='d-flex'>
+                            <Card style={{ width: '15rem' }} className='text-center p-3 m-2 mx-auto shadow'>
                                 <Link to={`/gyms/${gym.attributes.id}`}>
                                     <Card.Title>{gym.attributes.name}</Card.Title>
                                 </Link>

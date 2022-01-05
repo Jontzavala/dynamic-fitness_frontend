@@ -1,4 +1,5 @@
 export const addWorkout = (workout, gymId, history) => {
+    console.log(workout)
 
     return (dispatch) => {
         fetch(`http://localhost:3000/api/v1/gyms/${gymId}/workouts`, {
